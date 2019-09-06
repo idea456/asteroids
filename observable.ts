@@ -97,6 +97,8 @@ class Observable<Input> {
     })
   }
 
+
+
   /**
    * create an Observable sequence from an Array
    * @param arr array of elements to be passed through Observable
@@ -133,6 +135,7 @@ class Observable<Input> {
         this.subscribe(e=>observer.next(transform(e)), ()=>observer.complete())
       );
   }
+
 
   /** basically a ``tap'' function applies f to the input and passes that input (unchanged) downstream
    * @param f function applied to each input
@@ -211,3 +214,14 @@ class Observable<Input> {
     })
   }
 }
+
+
+
+
+// static fromEvent<E extends Event>(el: Node, name: string): Observable<E> {
+//   return new Observable<E>((observer: Observer<E>) => {
+//     const listener = <EventListener>((e:E) => observer.next(e));
+//     el.addEventListener(name, listener);
+//     return () => el.removeEventListener(name, listener);
+//   })
+// }

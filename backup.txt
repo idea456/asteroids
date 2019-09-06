@@ -1,0 +1,27 @@
+  mousedown
+    .map(({clientX,clientY}) => ({x: parseInt(ship.attr('x')) + (parseInt(ship.attr('x'))-clientX), 
+                 y: parseInt(ship.attr('y')) + 5}))
+    .flatMap(({x,y}) => 
+    moveup
+      .takeUntil(keyup)
+      .map(() => ship.attr('x',x).attr('y',y)))
+    .subscribe(() => g.attr('transform','translate('+ship.attr('x')+','+ship.attr('y')+") rotate("+g.attr('angle')+")"));
+
+
+
+      moveup
+  .flatMap(() => 
+    moveup
+    .takeUntil(keyup)
+    .map(() => ({x: parseInt(ship.attr('x')) + 1, 
+                 y: parseInt(ship.attr('y')) -1}))
+    .map(({x,y}) => ship.attr('x',x).attr('y',y))
+    .map(() => g.attr('transform','translate('+ship.attr('x')+','+ship.attr('y')+") rotate("+g.attr('angle')+")")))
+  .subscribe(() => console.log("moved up by " + ship.attr('x') + " " + ship.attr('y')));
+
+
+
+      .flatMap(() => keyup
+      .map(() => decreaseAcceleration()))
+      .map(() => g.attr("transform","translate("+ship.attr('x')+","+ship.attr('y')+") rotate("+g.attr('angle')+")"))
+      .map(() => console.log("decreasing acceleration...")))
