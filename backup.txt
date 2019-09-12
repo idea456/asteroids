@@ -25,3 +25,16 @@
       .map(() => decreaseAcceleration()))
       .map(() => g.attr("transform","translate("+ship.attr('x')+","+ship.attr('y')+") rotate("+g.attr('angle')+")"))
       .map(() => console.log("decreasing acceleration...")))
+
+
+
+
+
+
+
+      map(() => increaseAcceleration())
+      // calculate direction vector using angle
+      .map(() => addDirection(Math.cos(toRadians(parseInt(g.attr('angle'))))*parseInt(g.attr('velocity')),
+                              Math.sin(toRadians(parseInt(g.attr('angle'))))*parseInt(g.attr('velocity')))))
+      .map(() => outOfBoundX()  ? backToBoundX() : null)
+      .map(() => outOfBoundY()  ? backToBoundY() : null)

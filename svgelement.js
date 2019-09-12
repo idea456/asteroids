@@ -14,5 +14,8 @@ class Elem {
     observe(event) {
         return Observable.fromEvent(this.elem, event);
     }
+    delete() {
+        this.elem.remove();
+    }
 }
 //# sourceMappingURL=svgelement.js.map

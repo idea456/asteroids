@@ -37,4 +37,14 @@ class Elem {
   observe<T extends Event>(event: string): Observable<T> {
     return Observable.fromEvent<T>(this.elem, event);
   }
+
+  // removes the svg element
+  delete() {
+    this.elem.remove();
+  }
 }
+
+
+
+
+
