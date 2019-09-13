@@ -38,7 +38,7 @@ class Elem {
     return Observable.fromEvent<T>(this.elem, event);
   }
 
-  // removes the svg element
+  // function that removes the element from the canvas
   delete() {
     this.elem.remove();
   }

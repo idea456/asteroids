@@ -5,3 +5,7 @@ H1 {
     font-size: 38px;
     font-family: arial, helvetica, sans-serif;
 }
+
+.sidetext {
+    align-content: left;
+}

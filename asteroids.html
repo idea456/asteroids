@@ -16,11 +16,19 @@
         <script src="asteroids.js"></script>
     </head>
     <body>
-        <h1>Asteroids</h1>
-        <p>How to play : <br>- Use the mouse to point the ship's direction and the UP key to move the ship foward< <br>- When the ship is yellow, the ship is does not take damage</p>
-        <h4 id="lives">lives : &#10084&#10084&#10084</h4>
-        <h4 id="score">Score : 0</h4>
+        <div>
+            <h1>Asteroids</h1>
+            <p>How to play and rules : <br>- Use the mouse to point the ship's direction and the UP key to move the ship foward 
+                <br>- When the ship is hit, it loses a single life and becomes invincible for a moment (turns yellow)
+                <br>- When the ship is hit, it automatically spawns back into the center of the canvas
+                <br> <strong>Note: </strong> if the asteroids.html is opened for the <b>first time</b>, reload the browser twice to spawn the asteroids
+                <br>- Only red asteroids can be destroyed</p>
+            <h4 id="lives">lives : &#10084&#10084&#10084</h4>
+            <h4 id="score">Score : 0</h4>
+            <h1 id="gameOver"></h1>
+        </div>
+
         <svg id="canvas" width="600" height="600"/>
-        <h1 id="gameOver"></h1>
+        
     </body>
 </html>
